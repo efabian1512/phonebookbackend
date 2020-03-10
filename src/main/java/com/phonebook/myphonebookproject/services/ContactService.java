@@ -28,15 +28,15 @@ public class ContactService {
         return contactDao.selectAllContacts();
     }
 
-    public Optional<Contact1> getContactById(int id){
+    public Optional<Contact1> getContactById(String id){
         return contactDao.selectContactById(id);
     }
 
-    public int deleteContactById(int id){
+    public int deleteContactById(String id){
         return contactDao.deleteContactById(id);
     }
 
-    public int updateContactById(int id, Contact1 newContact){
+    public int updateContactById(String id, Contact1 newContact){
         return contactDao.updateContactById(id,newContact);
     }
 

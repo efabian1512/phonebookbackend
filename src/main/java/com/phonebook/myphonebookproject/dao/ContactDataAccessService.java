@@ -38,7 +38,7 @@ public class ContactDataAccessService implements ContactDao1 {
     }
 
     @Override
-    public Optional<Contact1> selectContactById(int id) {
+    public Optional<Contact1> selectContactById(String id) {
         final String sql = "SELECT id,name,telephone,email FROM contacts WHERE id = ?";
 
         Contact1 contact = jdbcTemplate.queryForObject(
@@ -57,7 +57,7 @@ public class ContactDataAccessService implements ContactDao1 {
     }
 
     @Override
-    public int deleteContactById(int id) {
+    public int deleteContactById(String id) {
         String sqlDelete = "DELETE from contacts WHERE id=?";
         Optional<Contact1> contactMaybe = selectContactById(id);
         if(contactMaybe.isEmpty()){
@@ -69,7 +69,7 @@ public class ContactDataAccessService implements ContactDao1 {
     }
 
     @Override
-    public int updateContactById(int id, Contact1 contact) {
+    public int updateContactById(String id, Contact1 contact) {
         String sqlUpdate = "UPDATE contacts SET name= ?, telephone=?,email=? WHERE id=?";
         Optional<Contact1> contactMaybe = selectContactById(id);
 

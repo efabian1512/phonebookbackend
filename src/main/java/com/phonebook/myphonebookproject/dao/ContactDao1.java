@@ -17,9 +17,9 @@ public interface ContactDao1 {
 
     List<Contact1> selectAllContacts();
 
-    Optional<Contact1> selectContactById(int id);
+    Optional<Contact1> selectContactById(String id);
 
-    int deleteContactById(int id);
+    int deleteContactById(String id);
 
-    int updateContactById(int id, Contact1 contact);
+    int updateContactById(String id, Contact1 contact);
 }
